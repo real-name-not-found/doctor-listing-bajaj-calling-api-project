@@ -1,22 +1,22 @@
 .doctor-card {
   display: flex;
-  background-color: #1e1e1e; /* Dark card background */
-  border-radius: 0; /* Sharp corners */
-  /* Remove shadow, use border */
-  border: 1px solid #333;
+  background-color: #2c2c2c; /* Dark card background */
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid #444; /* Light border */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); */
   padding: 16px;
   margin-bottom: 16px;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s ease-in-out;
 }
 
 .doctor-card:hover {
-  border-color: #555; /* Slightly lighter border on hover */
-  /* Remove transform */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); */
+  border-color: #666; /* Lighter border on hover */
 }
 
 .doctor-image-container {
-  width: 80px; /* Smaller image */
-  height: 80px;
+  width: 90px; /* Adjust size */
+  height: 90px;
   margin-right: 16px;
   flex-shrink: 0;
 }
@@ -25,9 +25,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0; /* Sharp corners */
-  border: 1px solid #444; /* Darker border */
-  filter: grayscale(100%); /* Black and white image */
+  border-radius: 50%; /* Circular images */
+  border: 1px solid #555; /* Darker border */
+  filter: none; /* Remove grayscale */
 }
 
 .doctor-info {
@@ -36,32 +36,39 @@
 }
 
 .doctor-name {
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
   font-size: 18px;
-  color: #ffffff; /* White */
-  font-weight: 500;
+  color: #e9ecef; /* Light text */
+  font-weight: 600;
 }
 
 .doctor-specialties {
-  color: #aaaaaa; /* Lighter grey */
+  color: #20c997; /* Primary color (Teal) */
   font-size: 14px;
   margin-bottom: 8px;
+  font-weight: 500;
 }
 
-.doctor-experience, .doctor-ratings {
-  color: #888888; /* Darker grey */
+.doctor-experience {
+  color: #adb5bd; /* Lighter grey */
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.doctor-ratings {
+  color: #adb5bd;
   font-size: 14px;
   margin-bottom: 6px;
 }
 
 .rating-value {
-  color: #cccccc; /* Light grey for rating value */
-  font-weight: 600;
+  color: #ffc107; /* Yellow/Gold for rating */
+  font-weight: 700;
   margin-right: 4px;
 }
 
 .doctor-location {
-  color: #888888; /* Darker grey */
+  color: #adb5bd; 
   font-size: 13px;
   margin-top: 8px;
 }
@@ -71,54 +78,57 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
-  width: 150px;
+  width: 160px; /* Adjust width */
   flex-shrink: 0;
+  padding-left: 16px; /* Add some space */
 }
 
 .consultation-types {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 8px;
+  gap: 6px; /* Adjust gap */
   margin-bottom: 8px;
 }
 
 .consultation-badge {
-  background-color: #333; /* Dark badge */
-  color: #cccccc; /* Light grey text */
-  padding: 4px 8px;
-  border-radius: 2px; /* Slightly rounded */
-  font-size: 11px; /* Smaller text */
-  border: 1px solid #444;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  background-color: #3a3a3a; /* Dark badge background */
+  color: #20c997; /* Primary text */
+  padding: 3px 8px;
+  border-radius: 4px; 
+  font-size: 12px; 
+  border: 1px solid #555; /* Dark border */
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 500;
 }
 
 .doctor-fees {
   font-size: 18px;
   font-weight: 600;
-  color: #ffffff; /* White */
+  color: #6f42c1; /* Purple for fees */
   margin: 8px 0;
 }
 
 .book-button {
-  background-color: #e0e0e0; /* Light grey background */
-  color: #121212; /* Dark text */
-  border: 1px solid #555;
-  border-radius: 0; /* Sharp corners */
+  background-color: #20c997; /* Primary color (Teal) */
+  color: #1a1a1a; /* Dark text for contrast */
+  border: 1px solid #20c997;
+  border-radius: 4px; /* Rounded corners */
   padding: 8px 16px;
   cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.2s, color 0.2s;
+  font-weight: 600;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   width: 100%;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  text-transform: none;
+  letter-spacing: normal;
+  text-align: center;
 }
 
 .book-button:hover {
-  background-color: #ffffff; /* White */
-  color: #000000; /* Black text */
-  border-color: #ccc;
+  background-color: #1baa80; 
+  border-color: #1baa80;
+  color: #ffffff; /* White text on hover */
 }
 
 @media (max-width: 768px) {
@@ -127,7 +137,7 @@
   }
   
   .doctor-image-container {
-    width: 100px; /* Slightly larger on mobile */
+    width: 100px; 
     height: 100px;
     margin: 0 auto 16px auto;
   }
@@ -140,5 +150,6 @@
   .doctor-booking {
     width: 100%;
     align-items: center;
+    padding-left: 0; /* Remove padding on mobile */
   }
 } 

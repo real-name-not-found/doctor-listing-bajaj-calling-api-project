@@ -22,14 +22,6 @@ const DoctorCard: React.FC<DoctorCardProps> = ({ doctor }) => {
         <div className="doctor-experience" data-testid="doctor-experience">
           {doctor.experience || 'N/A'}
         </div>
-        <div className="doctor-ratings">
-          <span className="rating-value">
-            {typeof doctor.ratings === 'number' ? doctor.ratings.toFixed(1) : 'N/A'}
-          </span>
-          <span className="rating-count">
-            ( {typeof doctor.reviews === 'number' ? doctor.reviews : 0} reviews )
-          </span>
-        </div>
         <div className="doctor-location">
           <div>{doctor.clinic?.name || 'Hospital N/A'}</div>
           <div>{doctor.clinic?.address?.locality || 'Location N/A'}, {doctor.clinic?.address?.city || ''}</div>

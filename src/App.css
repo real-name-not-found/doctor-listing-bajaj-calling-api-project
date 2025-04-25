@@ -5,11 +5,11 @@
 }
 
 body {
-  /* Futuristic font stack */
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* Standard modern font stack */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
-  color: #e0e0e0; /* Light grey text */
-  background-color: #121212; /* Very dark background */
+  color: #e9ecef; /* Light grey text */
+  background-color: #1a1a1a; /* Dark background */
 }
 
 .App {
