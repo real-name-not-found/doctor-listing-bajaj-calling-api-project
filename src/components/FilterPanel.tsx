@@ -11,6 +11,13 @@ interface FilterPanelProps {
   onClearSpecialties: () => void;
 }
 
+// Helper function to generate test ID for specialties
+const generateSpecialtyTestId = (specialtyName: string) => {
+  // Replace spaces and slashes with hyphens, convert to lowercase
+  const formattedName = specialtyName.replace(/\s+|\//g, '-').toLowerCase();
+  return `filter-specialty-${formattedName}`;
+}
+
 const FilterPanel: React.FC<FilterPanelProps> = ({
   filters,
   specialties,
@@ -27,10 +34,11 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
       <h3>Filters</h3>
       
       <div className="filter-section">
-        <h4>Consultation Type</h4>
+        <h4 data-testid="filter-header-moc">Consultation Type</h4>
         <div className="radio-group">
           <label>
             <input
+              data-testid="filter-video-consult"
               type="radio"
               name="consultationType"
               checked={filters.consultationType === 'Video Consult'}
@@ -40,6 +48,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
           </label>
           <label>
             <input
+              data-testid="filter-in-clinic"
               type="radio"
               name="consultationType"
               checked={filters.consultationType === 'In Clinic'}
@@ -56,12 +65,13 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
       </div>
       
       <div className="filter-section">
-        <h4>Specialties</h4>
+        <h4 data-testid="filter-header-speciality">Specialties</h4>
         <div className="checkbox-group">
           {/* Map directly over specialties if it's a valid array */}
           {Array.isArray(specialties) && specialties.map((specialty) => (
               <label key={specialty}>
                 <input
+                  data-testid={generateSpecialtyTestId(specialty)}
                   type="checkbox"
                   checked={filters.specialties.includes(specialty)}
                   onChange={() => onSpecialtyToggle(specialty)}
@@ -82,10 +92,11 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
       </div>
       
       <div className="filter-section">
-        <h4>Sort By</h4>
+        <h4 data-testid="filter-header-sort">Sort By</h4>
         <div className="radio-group">
           <label>
             <input
+              data-testid="sort-fees"
               type="radio"
               name="sortBy"
               checked={filters.sortBy === 'fees'}
@@ -95,6 +106,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
           </label>
           <label>
             <input
+              data-testid="sort-experience"
               type="radio"
               name="sortBy"
               checked={filters.sortBy === 'experience'}

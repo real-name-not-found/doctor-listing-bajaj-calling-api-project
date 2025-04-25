@@ -54,6 +54,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, suggestions, onSearch
     <div className="search-container">
       <div className="search-input-container">
         <input
+          data-testid="autocomplete-input"
           type="text"
           value={inputValue}
           onChange={handleInputChange}
@@ -74,6 +75,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, suggestions, onSearch
               key={index} 
               className="suggestion-item"
               onClick={() => handleSuggestionClick(suggestion)}
+              data-testid="suggestion-item"
             >
               {suggestion}
             </div>
